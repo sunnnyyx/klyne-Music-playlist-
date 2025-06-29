@@ -8,6 +8,7 @@ body {
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 nav {
@@ -45,11 +46,15 @@ nav ul li {
     color: white;
     font-family: 'Varela Round', sans-serif;
     display: flex;
+    flex-direction: column;
     margin: 23px auto;
-    width: 70%;
+    width: 90%;
     border-radius: 12px;
     padding: 34px;
-    background-image: url('klyne\ background.jpg');
+    background-image: url('klyne background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .bottom {
@@ -78,28 +83,38 @@ nav ul li {
 }
 
 .songItemContainer {
-    margin-top: 74px;
+    margin-top: 30px;
 }
 
 .songItem {
-    height: 50px;
     display: flex;
-    background-color: white;
-    color: black;
-    margin: 12px 0;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
+    color: black;
+    margin: 10px 0;
     border-radius: 34px;
+    padding: 10px 20px;
+    flex-wrap: wrap;
 }
 
 .songItem img {
-    width: 43px;
-    margin: 0 23px;
-    border-radius: 34px;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.songName {
+    flex: 1;
+    font-size: 1rem;
+    margin-right: 10px;
 }
 
 .timestamp {
-    margin: 0 23px;
+    white-space: nowrap;
+    margin-left: auto;
 }
 
 .timestamp i {
@@ -117,8 +132,28 @@ nav ul li {
     transition: opacity 0.4s ease-in;
 }
 
-@media only screen and (max-width: 1100px) {
-    body {
-        background-color: red;
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .songItem {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .songName {
+        margin: 5px 0;
+    }
+
+    .timestamp {
+        align-self: flex-end;
+        margin-top: 5px;
+    }
+
+    .songInfo {
+        left: 5vw;
+        font-size: 0.9rem;
     }
 }
